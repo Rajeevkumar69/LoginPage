@@ -1,0 +1,67 @@
+<div class="main-widget justify-content-center d-flex align-items-center vh-100 vw-100">
+     <div class="popup-form d-flex overflow-hidden rounded-3">
+          <div class="container-fluid">
+               <div class="row">
+                    <div class="col-12 col-lg-5 col-md-5 col-xs-5 p-0">
+                         <div class="popup-form-left login-left-content d-flex justify-content-end rounded-start p-2 ps-4">
+                              <h4 class="mb-3">Manage your Properties effectively with Repositree</h4>
+                              <p>Netflix provides a personalized subscription service that allow our member to access entertainment content lorem ipsyme</p>
+                         </div>
+                    </div>
+                    <div class="col-12 col-lg-7 col-md-7 col-xs-7 p-0 need-tbl">
+                         <div class="popup-form-fields login-right-content p-3 ps-4 pe-4 d-flex justify-content-center w-100">
+                              <div class="app-logo-and-content">
+                                   <img src="../../../../assets/images/app-logo/main-logo.svg" alt="Repositree Logo" />
+                                   <div class="content">
+                                        <h4 class="fw-medium mt-2 fs-5">Sign-In to Repositree</h4>
+                                   </div>
+                              </div>
+                              <div class="title-and-form w-100">
+                                   <form role="form" class="" [formGroup]="loginForm" (submit)="openSelectModulePopup()">
+                                        <div class="input-group d-table w-100 position-relative">
+                                             <span class="input-label position-absolute">Email Address</span>
+                                             <input type="email" formControlName="username" (blur)="displaySingleFormError(loginForm)" class="form-control" id="email" placeholder="Enter Email" />
+                                             <span class="form-error" *ngIf="formErrors.username">{{ formErrors.username }}</span>
+                                        </div>
+
+                                        <div class="input-group d-table w-100 position-relative">
+                                             <span class="input-label position-absolute">Password</span>
+                                             <input type="password" (blur)="displaySingleFormError(loginForm)" formControlName="password" class="form-control" id="password" placeholder="Enter Password" />
+                                             <span class="form-error" *ngIf="formErrors.password">{{ formErrors.password }}</span>
+                                        </div>
+                                        <div class="d-table w-100 position-relative">
+                                             <div class="google-re-captcha">
+                                                  <re-captcha (resolved)="resolvedCaptcha($event)" (blur)="displaySingleFormError(loginForm)" formControlName="recaptcha"></re-captcha>
+                                                  <span class="form-error" *ngIf="formErrors.recaptcha">{{ formErrors.recaptcha }}</span>
+                                             </div>
+                                        </div>
+                                        <div class="forgot-password text-decoration-underline text-end">
+                                             <a href="">Forgot Password?</a>
+                                        </div>
+
+                                        <div class="login-button">
+                                             <button type="button" (click)="openSelectModulePopup()" class="common-btn">Login</button>
+                                        </div>
+
+                                        <div class="or-content">
+                                             <h4>OR</h4>
+                                        </div>
+
+                                        <div class="social-login d-flex">
+                                             <button class="login-btn d-flex align-items-center">
+                                                  <img src="../../../../assets/images/others/google.png" alt="Google" />
+                                                  Continue with Google
+                                             </button>
+                                             <button class="login-btn d-flex align-items-center">
+                                                  <img src="../../../../assets/images/others/microsoft.png" alt="Microsoft" />
+                                                  Continue with Microsoft
+                                             </button>
+                                        </div>
+                                   </form>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
